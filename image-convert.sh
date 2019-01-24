@@ -6,3 +6,9 @@ magick resized.jpg -crop 1080x1080+0+460 cropped.jpg
 
 # 3. Put logo into overlay
 magick composite -compose atop -geometry +100+100 logo.png cropped.jpg with-logo.jpg
+
+# 4. Add Hashrocket logo
+magick convert with-logo.jpg -fill white -font Verdana -pointsize 100 -annotate +100+500 'Blog | Hashrocket' with-title.jpg
+
+# 4. Add blog title
+magick convert with-title.jpg -fill white -font VerdanaB -pointsize 100 -annotate +100+650 'Music + Ruby' with-subtitle.jpg

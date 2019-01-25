@@ -5,7 +5,7 @@ magick misael-moreno-1246168-unsplash.jpg -resize 2000x2000 resized.jpg
 magick resized.jpg -crop 1080x1080+0+460 cropped.jpg
 
 # 3. Put logo into overlay
-magick composite -compose atop -geometry +100+100 logo.png cropped.jpg with-logo.jpg
+magick composite -compose atop -geometry +100+100 assets/logo.png cropped.jpg with-logo.jpg
 
 # 4. Add Hashrocket logo
 magick convert with-logo.jpg -fill white -font fonts/CircularStd-Book.otf -pointsize 100 -annotate +100+500 'Blog | Hashrocket' with-title.jpg

@@ -11,7 +11,9 @@ magick convert output/cropped.jpg -fill black -colorize 40% output/darkened.jpg
 magick composite -compose atop -geometry +100+100 assets/logo.png output/darkened.jpg output/with-logo.jpg
 
 # Add header
-magick convert output/with-logo.jpg -fill white -font fonts/CircularStd-Book.otf -pointsize 100 -annotate +100+500 'Blog | Hashrocket' output/with-title.jpg
+magick convert output/with-logo.jpg -fill white -font fonts/CircularStd-Book.otf \
+  -pointsize 100 -annotate +100+500 'Blog | Hashrocket' output/with-title.jpg
 
 # Add blog title
-magick convert output/with-title.jpg -fill white -font fonts/CircularStd-Bold.otf -pointsize 100 -annotate +100+630 "$2" output/ready-for-instagram.jpg
+magick convert output/with-title.jpg -fill white -font fonts/CircularStd-Bold.otf \
+  -pointsize 100 -annotate +100+630 "$2" output/ready-for-instagram.jpg

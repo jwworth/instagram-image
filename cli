@@ -1,0 +1,18 @@
+require 'thor'
+
+class MyCLI < Thor
+  option :source, required: true
+  option :title, required: true
+
+  desc 'generate image', 'generate image'
+  def generate
+    puts "Source: #{options[:source]}"
+    puts "Title: \"#{options[:title]}\""
+
+    print "Generating image... "
+    `./image-convert.sh #{options[:source]} "#{options[:title]}"`
+    puts "done (ready-for-instagram.jpg)"
+  end
+end
+
+MyCLI.start(ARGV)

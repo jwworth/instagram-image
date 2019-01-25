@@ -1,5 +1,5 @@
 # 1. Whatever the size, resize so the largest side is 2000
-magick source.jpg -resize 2000x2000 resized.jpg
+magick "$1" -resize 2000x2000 resized.jpg
 
 # 2. Crop into an 1080x1080 square (need to be clearer on the position, will
 # this work on landscape)?
@@ -15,4 +15,4 @@ magick composite -compose atop -geometry +100+100 assets/logo.png darkened.jpg w
 magick convert with-logo.jpg -fill white -font fonts/CircularStd-Book.otf -pointsize 100 -annotate +100+500 'Blog | Hashrocket' with-title.jpg
 
 # 6. Add blog title
-magick convert with-title.jpg -fill white -font fonts/CircularStd-Bold.otf -pointsize 100 -annotate +100+630 "Code + Music:\nA Handbook" ready-for-instagram.jpg
+magick convert with-title.jpg -fill white -font fonts/CircularStd-Bold.otf -pointsize 100 -annotate +100+630 "$2" ready-for-instagram.jpg

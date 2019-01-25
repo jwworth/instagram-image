@@ -4,7 +4,7 @@ class MyCLI < Thor
   option :source, required: true
   option :title, required: true
 
-  desc 'generate image', 'generate image'
+  desc 'generate', 'Generate an image for Instagram!'
   def generate
     puts "Source: #{options[:source]}"
     puts "Title: \"#{options[:title]}\""

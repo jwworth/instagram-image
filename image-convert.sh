@@ -1,7 +1,8 @@
-# 1. Whatever the size (assumes a big image), resize so the largest side is 2000
-magick misael-moreno-1246168-unsplash.jpg -resize 2000x2000 resized.jpg
+# 1. Whatever the size, resize so the largest side is 2000
+magick source.jpg -resize 2000x2000 resized.jpg
 
-# 2. Crop into an 1080 square (need to be clearer on the position, will this work on landscape)?
+# 2. Crop into an 1080x1080 square (need to be clearer on the position, will
+# this work on landscape)?
 magick resized.jpg -crop 1080x1080+0+460 cropped.jpg
 
 # 3. Darken image

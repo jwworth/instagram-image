@@ -10,5 +10,5 @@ magick composite -compose atop -geometry +100+100 assets/logo.png cropped.jpg wi
 # 4. Add Hashrocket logo
 magick convert with-logo.jpg -fill white -font fonts/CircularStd-Book.otf -pointsize 100 -annotate +100+500 'Blog | Hashrocket' with-title.jpg
 
-# 4. Add blog title
+# 5. Add blog title
 magick convert with-title.jpg -fill white -font fonts/CircularStd-Bold.otf -pointsize 100 -annotate +100+650 'Music + Ruby' with-subtitle.jpg

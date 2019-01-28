@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Instagram Image Generator</title>
+  </head>
+  <body>
+    <h1>Instagram Image Generator</h1>
+    <form action="/download" method="POST" enctype="multipart/form-data">
+      <label for="background">Select a background picture</label>
+      <input type="file" name="file" name="background" accept="image/png, image/jpeg">
+
+      <label for="title">Select a title</label>
+      <input type="text" placeholder="Enter title" name="title">
+
+      <input type="submit" value="Create image">
+    </form>
+  </body>
+</html>

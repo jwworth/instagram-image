@@ -31,3 +31,7 @@ $ ruby app.rb
 ```
 
 Visit [http://localhost:4566](http://localhost:4567) and provide your data.
+
+### License
+
+This project is released under the MIT License.

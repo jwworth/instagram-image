@@ -1,3 +1,5 @@
+# vi: syntax=ruby
+
 require 'thor'
 
 class MyCLI < Thor

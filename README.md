@@ -30,7 +30,7 @@ Break up a long title with newlines.
 $ ruby app.rb
 ```
 
-Visit [http://localhost:4566](http://localhost:4567) and provide your data.
+Visit [http://localhost:4567](http://localhost:4567) and provide your data.
 
 ### License
 

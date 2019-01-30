@@ -7,10 +7,10 @@
     <h1>Instagram Image Generator</h1>
     <form action="/download" method="POST" enctype="multipart/form-data">
       <label for="background">Choose a background picture:</label>
-      <input type="file" name="file" name="background" accept="image/png, image/jpeg">
+      <input type="file" name="file" name="background" accept="image/png, image/jpeg" required>
 
       <label for="title">Choose a title (newlines supported):</label>
-      <input type="text" placeholder="Enter title" name="title">
+      <input type="text" placeholder="My blog post" name="title" required>
 
       <input type="submit" value="Create image">
     </form>

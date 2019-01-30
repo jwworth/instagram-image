@@ -1,5 +1,6 @@
 require 'open3'
 require 'sinatra'
+require_relative 'support/helpers.rb'
 
 get '/' do
   erb :form
@@ -21,10 +22,4 @@ post '/download' do
     attachment(generate_title(title))
     output
   end
-end
-
-private
-
-def generate_title(title)
-  title.downcase.gsub(/\s+/, "_") + "_#{Time.now.to_i}.jpg"
 end

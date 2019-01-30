@@ -1,3 +1,4 @@
+require 'open3'
 require 'sinatra'
 
 get '/' do
@@ -6,9 +7,16 @@ end
 
 post '/download' do
   background = params[:file][:tempfile]
-  title = params[:title]
-  `./image-convert.sh #{background.path} "#{title}"`
-  result = File.new('tmp/ready-for-instagram.jpg')
+  output, _error, status = Open3.capture3(
+    "./image-convert.sh",
+    params[:title],
+    stdin_data: background.read,
+    binmode: true
+  )
 
-  send_file result.path
+  if status.success?
+    content_type('image/jpeg')
+    attachment('test.jpg')
+    output
+  end
 end

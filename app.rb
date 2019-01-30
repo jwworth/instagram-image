@@ -10,7 +10,7 @@ post '/download' do
   background = params[:file][:tempfile]
   title = params[:title]
 
-  output, _error, status = Open3.capture3(
+  output, error, status = Open3.capture3(
     "./image-convert.sh",
     title,
     stdin_data: background.read,
@@ -21,5 +21,7 @@ post '/download' do
     content_type('image/jpeg')
     attachment(generate_title(title))
     output
+  else
+    throw error
   end
 end

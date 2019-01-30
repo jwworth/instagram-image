@@ -16,7 +16,7 @@ class MyCLI < Thor
     puts "Title: \"#{title}\""
 
     print "Generating image... "
-    output, _error, status = Open3.capture3(
+    output, error, status = Open3.capture3(
       "./image-convert.sh",
       title,
       stdin_data: File.new(source).read,
@@ -27,6 +27,8 @@ class MyCLI < Thor
       filename = generate_title(title)
       File.open(filename, 'w') { |file| file.write(output) }
       puts "done (#{filename})"
+    else
+      throw error
     end
   end
 end

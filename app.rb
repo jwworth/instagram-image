@@ -1,6 +1,11 @@
+require 'dotenv/load'
 require 'open3'
 require 'sinatra'
 require_relative 'support/helpers.rb'
+
+use Rack::Auth::Basic, "Restricted Area" do |username, password|
+  username == ENV.fetch('basic_auth_username') && password == ENV.fetch('basic_auth_password')
+end
 
 get '/' do
   erb :form

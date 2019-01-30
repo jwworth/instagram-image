@@ -1,6 +1,8 @@
 # vi: syntax=ruby
 
 require 'thor'
+require 'open3'
+require_relative 'support/helpers'
 
 class MyCLI < Thor
   option :source, required: true
@@ -8,12 +10,24 @@ class MyCLI < Thor
 
   desc 'generate', 'Generate an image for Instagram!'
   def generate
-    puts "Source: #{options[:source]}"
-    puts "Title: \"#{options[:title]}\""
+    source = options[:source]
+    title = options[:title]
+    puts "Source: #{source}"
+    puts "Title: \"#{title}\""
 
     print "Generating image... "
-    `./image-convert.sh #{options[:source]} "#{options[:title]}"`
-    puts "done (tmp/ready-for-instagram.jpg)"
+    output, _error, status = Open3.capture3(
+      "./image-convert.sh",
+      title,
+      stdin_data: File.new(source).read,
+      binmode: true
+    )
+
+    if status.success?
+      filename = generate_title(title)
+      File.open(filename, 'w') { |file| file.write(output) }
+      puts "done (#{filename})"
+    end
   end
 end
 

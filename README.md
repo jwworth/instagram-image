@@ -13,17 +13,6 @@ $ bundle
 
 Install [ImageMagick](https://imagemagick.org/) via your method of choice.
 
-### CLI
-
-Find a cool image on [Unsplash](https://unsplash.com). Copy it to the root of
-this project and name it `source.jpg`. Then:
-
-```
-$ ruby ./cli generate --source source.jpg --title "Find your Ruby"
-```
-
-Break up a long title with newlines.
-
 ### Webserver
 
 ```
@@ -31,6 +20,16 @@ $ ruby app.rb
 ```
 
 Visit [http://localhost:4567](http://localhost:4567) and provide your data.
+Break up a long title with newlines.
+
+### CLI
+
+Find a cool image on [Unsplash](https://unsplash.com). Copy it to the root of
+this project.jpg`. Then:
+
+```
+$ ruby ./cli generate --source your-file.jpg --title "Find your Ruby"
+```
 
 ### License
 

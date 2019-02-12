@@ -1,6 +1,8 @@
 # instagram-image
 
-Make an image for Instagram!
+Make an image for Instagram! For more details, see:
+
+https://hashrocket.com/blog/posts/generate-images-for-instagram
 
 ### Setup
 

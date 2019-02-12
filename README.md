@@ -25,7 +25,7 @@ Break up a long title with newlines.
 ### CLI
 
 Find a cool image on [Unsplash](https://unsplash.com). Copy it to the root of
-this project.jpg`. Then:
+this project. Then:
 
 ```
 $ ruby ./cli generate --source your-file.jpg --title "Find your Ruby"

@@ -25,8 +25,8 @@ Install [ImageMagick](https://imagemagick.org/) via your method of choice.
 $ ruby app.rb
 ```
 
-Visit [http://localhost:4567](http://localhost:4567) and provide your data.
-Break up a long title with newlines.
+Visit http://localhost:4567 and provide your data  Break up a long title with
+newlines.
 
 ### CLI
 
